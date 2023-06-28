@@ -4,10 +4,19 @@ use std::time::Duration;
 
 fn main() {
     let mut matrix: [[bool; 10]; 10] = [[false; 10]; 10];
-    matrix[1][2] = true;
-    matrix[2][2] = true;
-    matrix[3][2] = true;
-
+    matrix[3][3] = true;
+    matrix[3][4] = true;
+    matrix[3][5] = true;
+    matrix[3][7] = true;
+    matrix[4][3] = true;
+    matrix[7][3] = true;
+    matrix[6][4] = true;
+    matrix[6][5] = true;
+    matrix[6][7] = true;
+    matrix[5][6] = true;
+    matrix[5][7] = true;
+    matrix[7][5] = true;
+    matrix[7][7] = true;
     pretty_print(&matrix);
 
     for _ in 0..5 {
@@ -54,8 +63,8 @@ fn pretty_print(grid: &[[bool; 10]; 10]) {
     for i in 0..grid.len() {
         for j in 0..grid[i].len() {
             match grid[i][j] {
-                true => print!("*"),
-                false => print!("-"),
+                true => print!("* "),
+                false => print!("- "),
             }
         }
         println!();
